@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the Python script into the container
 COPY ["API Based Tweet Classifier.py", "./"]
 
+COPY trained_model.h5 /app/
+
 # Install additional dependencies
 RUN pip install fastapi uvicorn pydantic tensorflow numpy joblib
 
