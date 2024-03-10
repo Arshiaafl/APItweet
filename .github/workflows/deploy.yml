@@ -29,3 +29,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/tweet:latest
+
+      - name: Deploy to Docker
+        run: |
+          docker pull ${{ secrets.DOCKER_USERNAME }}/tweet:latest
+          docker run -p 8888:8888 ${{ secrets.DOCKER_USERNAME }}/tweet:latest
