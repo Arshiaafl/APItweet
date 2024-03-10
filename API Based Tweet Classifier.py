@@ -13,13 +13,13 @@ import numpy as np
 import joblib
 
 # Load the trained model
-model = load_model('trained_model.h5')
+model = load_model('/app/trained_model.h5')
 
 # Load the Tokenizer and LabelEncoder
-with open('tokenizer.pkl', 'rb') as tokenizer_file:
+with open('/app/tokenizer.pkl', 'rb') as tokenizer_file:
     tokenizer = joblib.load(tokenizer_file)
 
-with open('label_encoder.pkl', 'rb') as label_encoder_file:
+with open('/app/label_encoder.pkl', 'rb') as label_encoder_file:
     label_encoder = joblib.load(label_encoder_file)
 
 app = FastAPI()
