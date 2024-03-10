@@ -9,6 +9,10 @@ COPY ["API Based Tweet Classifier.py", "./"]
 
 COPY trained_model.h5 /app/
 
+COPY tokenizer.pkl /app/
+
+COPY label_encoder.pkl /app/
+
 # Install additional dependencies
 RUN pip install fastapi uvicorn pydantic tensorflow numpy joblib
 
